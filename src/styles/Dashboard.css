@@ -1,0 +1,73 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.dashboard h1 {
+    margin-bottom: 30px;
+    font-size: 26px;
+    align-self: flex-start;
+}
+
+.dashboard form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard form > div {
+    flex: 1;
+}
+
+.dashboard form input {
+    flex: 4;
+    border: 1px solid #CCC;
+    border-radius: 0;
+    padding: 6px;
+    font-family: inherit;
+    transition: ease-in-out 100ms;
+    border-right: 0;
+}
+
+.dashboard form input:focus {
+    border-color: #555;
+}
+
+.dashboard form button {
+    flex: 1;
+    height: auto;
+    border-radius: 0;
+    border: 0;
+    background-color: #334195;
+    color: #FFF;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: ease-in-out 100ms;
+}
+
+.dashboard form button:hover {
+    background-color: #32322C;
+}
+
+.dashboard .selectComponent > div {
+    border-radius: 0;
+    border: 1px solid #CCC;
+}
+
+.dashboard .dashboardResponse {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dashboard .dashboardResponse h2 {
+    font-size: 18px;
+}
+
+.dashboard .dashboardResponse code {
+    font-size: 10px;
+    color: #32322C;
+}

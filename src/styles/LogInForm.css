@@ -1,0 +1,43 @@
+.logInForm {
+    width: 400px;
+    margin: 100px auto;
+}
+
+.logInForm h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.logInForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+.logInForm form input {
+    margin: 10px 0;
+    border: 1px solid #CCC;
+    border-radius: 0;
+    padding: 6px;
+    font-family: inherit;
+    transition: ease-in-out 100ms;
+}
+
+.logInForm form input:focus {
+    border-color: #555;
+}
+
+.logInForm form button {
+    width: 100px;
+    height: 34px;
+    border-radius: 0;
+    border: 2px solid #E8EBF7;
+    background-color: #E8EBF7;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: ease-in-out 100ms;
+}
+
+.logInForm form button:hover {
+    border-color: #ACBED8;
+}
