@@ -1,4 +1,4 @@
-![GitHub-Logo](https://user-images.githubusercontent.com/8419324/133948902-82bed485-b973-4176-bef9-5ac5ea09ee13.png)
+![GitHub-Logo](https://user-images.githubusercontent.com/8419324/133998535-4a2da4e2-bf25-4477-a04f-6e130baa55c0.png)
 
 
 # Requestly
