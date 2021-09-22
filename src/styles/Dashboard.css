@@ -56,18 +56,3 @@
     border-radius: 0;
     border: 1px solid #CCC;
 }
-
-.dashboard .dashboardResponse {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.dashboard .dashboardResponse h2 {
-    font-size: 18px;
-}
-
-.dashboard .dashboardResponse code {
-    font-size: 10px;
-    color: #32322C;
-}

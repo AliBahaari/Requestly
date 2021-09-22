@@ -1,0 +1,45 @@
+.postData,
+.getParams {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.postData h2,
+.getParams h2 {
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.postData > div,
+.getParams > div {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+}
+
+.postData > div > div,
+.getParams > div > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.postData > span,
+.getParams > span {
+    width: 40px;
+    height: 26px;
+    background-color: #157F1F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: ease-in-out 100ms;
+}
+
+.postData > span:hover,
+.getParams > span:hover {
+    background-color: #32322C;
+}

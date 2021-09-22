@@ -1,0 +1,16 @@
+.input {
+    margin: 4px 0;
+}
+
+.input > input {
+    width: 100%;
+    border: 1px solid #CCC;
+    border-radius: 0;
+    padding: 6px;
+    font-family: inherit;
+    transition: ease-in-out 100ms;
+}
+
+.input > input:focus {
+    border-color: #555;
+}

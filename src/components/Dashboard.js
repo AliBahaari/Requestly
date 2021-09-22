@@ -3,6 +3,8 @@ import '../styles/Dashboard.css';
 import Select from 'react-select';
 import { useState } from 'react';
 import Error from './Error';
+import Protocole from './Protocole';
+import Response from './Response';
 
 const options = [
     { value: 'post', label: 'POST' },
@@ -102,20 +104,28 @@ function Dashboard() {
             }
 
             {
-                response ?
-                <div className="dashboardResponse">
-                    <h2>Response</h2>
-                    <code>
+                selectedOption !== null ?
+                    (
+                        selectedOption.value === 'post' ?
+                            <Protocole className="postData" title="Post Data" />
+                        :
+                            <Protocole className="getParams" title="Get Params" />
+                    ) 
+                :
+                    ''
+            }
 
+            {
+                response ?
+                    <Response>
                         {
                             data ?
                             JSON.stringify(data, null, 2) :
                             ''
                         }
-
-                    </code>
-                </div> :
-                ''
+                    </Response>
+                :
+                    ''
             }
 
         </div>
