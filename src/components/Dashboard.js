@@ -70,65 +70,66 @@ function Dashboard() {
     }
 
     const closeError = () => {
-
         setError(false);
-
     }
 
     return (
         <div className="dashboard">
+            <div className="requestSection">
 
-            <h1>Welcome {adminReducer.admin} to Requestly!</h1>
+                <h1>{adminReducer.admin}, Check Requestly!</h1>
 
-            <form onSubmit={submitForm}>
-                <div>
-                    <Select
-                        defaultValue={selectedOption}
-                        onChange={setSelectedOption}
-                        options={options}
-                        className="selectComponent"
-                    />
-                </div>
+                <form onSubmit={submitForm}>
+                    <div>
+                        <Select
+                            defaultValue={selectedOption}
+                            onChange={setSelectedOption}
+                            options={options}
+                            className="selectComponent"
+                        />
+                    </div>
 
-                <input type="text" onChange={(e) => setUrl(e.target.value)} />
-                
-                <button>
-                    Request
-                </button>
-            </form>
+                    <input type="text" onChange={(e) => setUrl(e.target.value)} />
+                    
+                    <button>
+                        Request
+                    </button>
+                </form>
 
-            {
-                error ?
-                <Error text={errorText} closeError={closeError} /> :
-                ''
-            }
-
-            {
-                selectedOption !== null ?
-                    (
-                        selectedOption.value === 'post' ?
-                            <Protocole className="postData" title="Post Data" />
-                        :
-                            <Protocole className="getParams" title="Get Params" />
-                    ) 
-                :
+                {
+                    error ?
+                    <Error text={errorText} closeError={closeError} /> :
                     ''
-            }
+                }
 
-            {
-                response ?
-                    <Response>
-                        {
-                            data ?
-                                JSON.stringify(data, null, 2)
+                {
+                    response ?
+                        <Response>
+                            {
+                                data ?
+                                    JSON.stringify(data, null, 2)
+                                :
+                                    ''
+                            }
+                        </Response>
+                    :
+                        ''
+                }
+
+            </div>
+            <div className="optionsSection">
+                {
+                    selectedOption !== null ?
+                        (
+                            selectedOption.value === 'post' ?
+                                <Protocole className="postData" title="Post Data" />
                             :
-                                ''
-                        }
-                    </Response>
-                :
-                    ''
-            }
-
+                                <Protocole className="getParams" title="Get Params" />
+                        ) 
+                    :
+                        <p className="protocoleInfo">Choose the protocole to enable options.</p>
+                }            
+            </div>
         </div>
     );
 }
