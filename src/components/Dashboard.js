@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import '../styles/Dashboard.css';
 import Select from 'react-select';
 import { useState } from 'react';
@@ -13,7 +12,6 @@ const options = [
 
 function Dashboard() {
 
-    const adminReducer = useSelector(state => state.adminReducer)
     const [selectedOption, setSelectedOption] = useState(null);
     const [url, setUrl] = useState('');
     const [error, setError] = useState(false);
@@ -77,7 +75,7 @@ function Dashboard() {
         <div className="dashboard">
             <div className="requestSection">
 
-                <h1>{adminReducer.admin}, Check Requestly!</h1>
+                <h1>URL Status by Requestly!</h1>
 
                 <form onSubmit={submitForm}>
                     <div>

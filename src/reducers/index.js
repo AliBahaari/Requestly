@@ -1,8 +1,5 @@
 import { combineReducers } from 'redux';
-import adminReducer from './adminReducer';
 
-const rootReducer = combineReducers({
-    adminReducer
-});
+const rootReducer = combineReducers({});
 
 export default rootReducer;

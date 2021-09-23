@@ -7,6 +7,8 @@ function Protocole(props) {
 
         console.log('Add More Fields');
 
+        document.getElementsByClassName(props.className)[0].append(<div>Test</div>);
+
     }
 
     return (
