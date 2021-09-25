@@ -16,22 +16,31 @@
     flex-direction: column;
 }
 
-.postData > span,
-.getParams > span {
+.addButton,
+.removeButton {
     background-color: #157F1F;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #FFF;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: bold;
     cursor: pointer;
     transition: ease-in-out 100ms;
-    margin: 20px 0;
-    padding: 6px;
+    margin: 2px 0;
+    padding: 7px;
 }
 
-.postData > span:hover,
-.getParams > span:hover {
+.removeButton {
+    background-color: #931621;
+    margin-top: 20px;
+}
+
+.addButton:hover,
+.removeButton:hover {
     background-color: #32322C;
+}
+
+.inputElements {
+    margin: 8px 0;
 }
