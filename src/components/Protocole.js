@@ -1,20 +1,29 @@
-import Input from "./Input";
 import '../styles/Protocole.css';
 import { useState } from 'react';
 
 function Protocole(props) {
 
-	const [inputElements, setInputElements] = useState([<><Input placeholder="Param Name" /><Input placeholder="Value" /></>]);
+	const [inputElements, setInputElements] = useState([
+		<>
+			<input type="text" placeholder={props.placeholder} className="optionsInput" />
+			<input type="text" placeholder={props.placeholder} className="optionsInput" />
+		</>
+	]);
 
     const addFields = () => {
-        const component = <><Input placeholder="Param Name" /><Input placeholder="Value" /></>;
+
+        const component =
+			<>
+				<input type="text" placeholder={props.placeholder} className="optionsInput" />
+				<input type="text" placeholder={props.placeholder} className="optionsInput" />
+			</>;
         const addedElements = [...inputElements, component];
         setInputElements(addedElements);
+
     }
 
     const removeFields = () => {
-    	const removedElements = [inputElements.pop()];
-    	setInputElements(removedElements);
+		
     }
 
     return (
