@@ -5,8 +5,8 @@ function Protocole(props) {
 
 	const [inputElements, setInputElements] = useState([
 		<>
-			<input type="text" placeholder={props.placeholder} className="optionsInput" />
-			<input type="text" placeholder={props.placeholder} className="optionsInput" />
+			<input type="text" placeholder="Parameter" className="optionsInput" />
+			<input type="text" placeholder="Value" className="optionsInput" />
 		</>
 	]);
 
@@ -14,8 +14,8 @@ function Protocole(props) {
 
         const component =
 			<>
-				<input type="text" placeholder={props.placeholder} className="optionsInput" />
-				<input type="text" placeholder={props.placeholder} className="optionsInput" />
+				<input type="text" placeholder="Parameter" className="optionsInput" />
+				<input type="text" placeholder="Value" className="optionsInput" />
 			</>;
         const addedElements = [...inputElements, component];
         setInputElements(addedElements);

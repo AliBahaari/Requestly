@@ -87,7 +87,7 @@ function Dashboard() {
                         />
                     </div>
 
-                    <input type="text" onChange={(e) => setUrl(e.target.value)} />
+                    <input type="text" placeholder="URL..." onChange={(e) => setUrl(e.target.value)} />
                     
                     <button>
                         Request
