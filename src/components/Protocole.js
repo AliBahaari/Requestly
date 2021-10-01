@@ -3,32 +3,22 @@ import { useState } from 'react';
 
 function Protocole(props) {
 
-	const [inputElements, setInputElements] = useState([
-		<>
-			<input type="text" placeholder="Parameter" className="optionsInput" />
-			<input type="text" placeholder="Value" className="optionsInput" />
-		</>
-	]);
+	const [inputElements, setInputElements] = useState([]);
 
     const addFields = () => {
 
         const component =
 			<>
-				<input type="text" placeholder="Parameter" className="optionsInput" />
-				<input type="text" placeholder="Value" className="optionsInput" />
+				<input type="text" placeholder="Parameter" className="optionsInput" onChange={props.method[0]} />
+				<input type="text" placeholder="Value" className="optionsInput" onChange={props.method[1]} />
 			</>;
         const addedElements = [...inputElements, component];
         setInputElements(addedElements);
 
     }
 
-    const removeFields = () => {
-		
-    }
-
     return (
         <div className={props.className}>
-            <h2>{props.title}</h2>
 
 			{
 
@@ -38,13 +28,6 @@ function Protocole(props) {
 					</div>
 				))
 
-			}
-
-			{
-				inputElements.length > 1 ?
-					<span className="removeButton" onClick={removeFields}>Remove a Field</span>
-				:
-					''
 			}
 
             <span className="addButton" onClick={addFields}>Add a Field</span>

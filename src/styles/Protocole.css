@@ -4,12 +4,6 @@
     flex-direction: column;
 }
 
-.postData h2,
-.getParams h2 {
-    font-size: 18px;
-    margin-top: 30px;
-}
-
 .postData > div,
 .getParams > div {
     display: flex;
@@ -32,8 +26,7 @@
     border-color: #555;
 }
 
-.addButton,
-.removeButton {
+.addButton {
     background-color: #157F1F;
     display: flex;
     justify-content: center;
@@ -47,13 +40,7 @@
     padding: 7px;
 }
 
-.removeButton {
-    background-color: #931621;
-    margin-top: 20px;
-}
-
-.addButton:hover,
-.removeButton:hover {
+.addButton:hover {
     background-color: #32322C;
 }
 

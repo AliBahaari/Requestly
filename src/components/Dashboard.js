@@ -18,9 +18,23 @@ function Dashboard() {
     const [errorText, setErrorText] = useState('');
     const [data, setData] = useState(null);
     const [response, setResponse] = useState(false);
+    const [firstInputs, setFirstInputs] = useState([]);
+	const [secondInputs, setSecondInputs] = useState([]);
+    const [formData, setFormData] = useState({});
 
     const submitForm = (e) => {
         e.preventDefault();
+
+        setResponse(false);
+        setData(null);
+
+        for (let i = 0; i < firstInputs.length; i++) {
+
+            setFormData({...formData,
+                [firstInputs[i]]: secondInputs[i]
+            });
+
+        }
 
         if (selectedOption !== null) {
             setError(false);
@@ -30,21 +44,43 @@ function Dashboard() {
                     setError(false);
                     
                     if (!url.includes('http://') || !url.includes('https://')) {
-                        
+
                         try {
 
-                            fetch(url, {
-                                method: selectedOption.value
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                
-                                setResponse(true);
-                                setData(data);
-                                
-                            });
+                            if (selectedOption.value === 'post') {
 
-                            setResponse(true);
+                                fetch(url, {
+                                    method: selectedOption.value,
+                                    body: formData
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    
+                                    setResponse(true);
+                                    setData(data);
+                                    
+                                });
+
+                            } else if (selectedOption.value === 'get') {
+                                
+                                const newUrl = new URL(url);
+                                
+                                for (let key in formData) {
+                                    newUrl.searchParams.append(key, formData[key]);
+                                }
+
+                                fetch(newUrl, {
+                                    method: selectedOption.value
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    
+                                    setResponse(true);
+                                    setData(data);
+                                    
+                                });                     
+
+                            }
 
                         } catch (err) {
                             console.log(err);
@@ -71,6 +107,14 @@ function Dashboard() {
         setError(false);
     }
 
+    const firstInputsMethod = (e) => {
+		setFirstInputs([...firstInputs, e.target.value]);
+	}
+
+	const secondInputsMethod = (e) => {
+		setSecondInputs([...secondInputs, e.target.value]);
+	}
+
     return (
         <div className="dashboard">
             <div className="requestSection">
@@ -96,37 +140,55 @@ function Dashboard() {
 
                 {
                     error ?
-                    <Error text={errorText} closeError={closeError} /> :
-                    ''
-                }
-
-                {
-                    response ?
-                        <Response>
-                            {
-                                data ?
-                                    JSON.stringify(data, null, 2)
-                                :
-                                    ''
-                            }
-                        </Response>
+                        <Error text={errorText} closeError={closeError} />
                     :
                         ''
                 }
 
             </div>
             <div className="optionsSection">
-                {
-                    selectedOption !== null ?
+                <div>
+                    <h2>Response</h2>
+                    {
+                        response ?
+                            <Response>
+                                {
+                                    data ?
+                                        JSON.stringify(data, null, 2)
+                                    :
+                                        ''
+                                }
+                            </Response>
+                        :
+                            <p className="responseInfo">No Data Yet...</p>
+                    }
+
+                </div>
+                <div>
+                    {
+                        selectedOption !== null ?
                         (
                             selectedOption.value === 'post' ?
-                                <Protocole className="postData" title="Post Data" />
+                                <h2>Data</h2>
                             :
-                                <Protocole className="getParams" title="Get Params" />
+                                <h2>Params</h2>
                         ) 
                     :
-                        <p className="protocoleInfo">Choose the protocole to enable options.</p>
-                }            
+                        <h2>Data & Params</h2>
+                    }
+                    
+                    {
+                        selectedOption !== null ?
+                            (
+                                selectedOption.value === 'post' ?
+                                    <Protocole className="postData" title="Post Data" method={[firstInputsMethod, secondInputsMethod]} />
+                                :
+                                    <Protocole className="getParams" title="Get Params" method={[firstInputsMethod, secondInputsMethod]} />
+                            ) 
+                        :
+                            <p className="protocoleInfo">Choose the protocole to enable options...</p>
+                    }            
+                </div>
             </div>
         </div>
     );

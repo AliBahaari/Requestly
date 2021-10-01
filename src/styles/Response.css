@@ -1,12 +1,6 @@
 .response {
     display: flex;
     flex-direction: column;
-    width: 100%;    
-}
-
-.response h2 {
-    font-size: 18px;
-    margin-top: 30px;
 }
 
 .response code {

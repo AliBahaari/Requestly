@@ -1,15 +1,16 @@
 .dashboard {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .dashboard > div {
     flex: 1;
-    padding: 20px;
+    border: 1px dashed #EEE;
+    margin: 20px;
 }
 
 .dashboard .requestSection {
-    flex: 3;
+    padding: 40px;
 }
 
 .dashboard .requestSection h1 {
@@ -61,10 +62,29 @@
 
 .dashboard .requestSection .selectComponent > div {
     border-radius: 0;
-    border: 1px solid #CCC;
+    border: 1px solid rgb(168, 168, 168);
 }
 
-.dashboard .optionsSection .protocoleInfo {
+.dashboard .optionsSection {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+}
+
+.dashboard .optionsSection > div {
+    padding: 20px;
+}
+
+.dashboard .optionsSection > div:first-child {
+    flex: 3;
+}
+
+.dashboard .optionsSection > div:nth-child(2) {
+    flex: 1;
+}
+
+.dashboard .optionsSection div .protocoleInfo,
+.dashboard .optionsSection div .responseInfo {
     text-align: center;
     font-style: italic;
     font-size: 12px;
