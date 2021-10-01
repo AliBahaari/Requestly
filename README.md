@@ -9,7 +9,7 @@ It's a kind of Postman software but in online mode.
 
 ## Screenshots
 
-![Screenshot](https://user-images.githubusercontent.com/8419324/133948924-efe51297-2dd7-43cc-afa1-0a9560a4a309.png)
+![Requestly](https://user-images.githubusercontent.com/8419324/135667992-8d806882-e8e8-4121-9c28-2c58cd4ce500.png)
 
 
 ## License
