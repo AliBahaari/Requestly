@@ -28,7 +28,7 @@
 
 .addButton {
     background-color: #157F1F;
-    display: flex;
+    align-self: flex-start;
     justify-content: center;
     align-items: center;
     color: #FFF;
