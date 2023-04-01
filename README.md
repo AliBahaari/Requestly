@@ -3,7 +3,7 @@
 
 # Requestly
 
-By using Requestly, you can find out the status of APIs you use.
+By using Requestly, you can manipulate API endpoints.
 It's a kind of Postman software but in online mode.
 
 
